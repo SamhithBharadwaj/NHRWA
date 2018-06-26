@@ -4,18 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Title</title>
 </head>
 <body>
 	<form method="post" action="LoginCheck">
 		<table>
 			<tr>
 				<td>User Name</td>
-				<td><input type="text" name="name" /></td>
+				<td><input type="text" name="username" /></td>
 			</tr>
 			<tr>
 				<td>Password</td>
-				<td><input type="password" name="name" /></td>
+				<td><input type="password" name="password" /></td>
 			</tr>
 			<tr>
 				<td></td>
