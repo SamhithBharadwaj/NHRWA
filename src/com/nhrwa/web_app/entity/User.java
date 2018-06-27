@@ -1,17 +1,21 @@
 package com.nhrwa.web_app.entity;
 
-import com.nhrwa.web_app.enums.UserType;
-
+import com.nhrwa.web_app.annotations.EntityField;
+import com.nhrwa.web_app.annotations.TableName;
+@TableName(name = "UserTable")
 public class User extends BaseEntity {
-	private UserType type;
+	@EntityField(columnName = "UserType")
+	private Integer type;
+	@EntityField(columnName = "UserName")
 	private String name;
+	@EntityField(columnName = "Password")
 	private String password;
 
-	public UserType getType() {
+	public Integer getType() {
 		return type;
 	}
 
-	public void setType(UserType type) {
+	public void setType(Integer type){
 		this.type = type;
 	}
 

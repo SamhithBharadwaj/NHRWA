@@ -2,8 +2,12 @@ package com.nhrwa.web_app.entity;
 
 import java.util.Calendar;
 
+import com.nhrwa.web_app.annotations.EntityField;
+
 public class BaseEntity {
+	@EntityField(columnName = "id")
 	private String id;
+	@EntityField(columnName = "dateCreated")
 	private Calendar dateCreated;
 	public String getId() {
 		return id;
