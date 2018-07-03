@@ -4,6 +4,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
-public @interface TableName {
-	String name();
+public @interface Entity {
+	String tableName();
+	boolean readOnly() default false;
 }

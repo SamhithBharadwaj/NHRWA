@@ -1,8 +1,8 @@
 package com.nhrwa.web_app.entity;
 
 import com.nhrwa.web_app.annotations.EntityField;
-import com.nhrwa.web_app.annotations.TableName;
-@TableName(name = "UserTable")
+import com.nhrwa.web_app.annotations.Entity;
+@Entity(tableName = "UserTable")
 public class User extends BaseEntity {
 	@EntityField(columnName = "USERTYPE")
 	private Integer type;
