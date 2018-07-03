@@ -4,11 +4,11 @@ import com.nhrwa.web_app.annotations.EntityField;
 import com.nhrwa.web_app.annotations.TableName;
 @TableName(name = "UserTable")
 public class User extends BaseEntity {
-	@EntityField(columnName = "UserType")
+	@EntityField(columnName = "USERTYPE")
 	private Integer type;
-	@EntityField(columnName = "UserName")
+	@EntityField(columnName = "USERNAME")
 	private String name;
-	@EntityField(columnName = "Password")
+	@EntityField(columnName = "PASSWORD")
 	private String password;
 
 	public Integer getType() {

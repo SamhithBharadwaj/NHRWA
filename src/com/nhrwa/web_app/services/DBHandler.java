@@ -8,34 +8,35 @@ import java.sql.Statement;
 
 public class DBHandler {
 
-//	private static final String url = "jdbc:mysql://localhost/t";
-	private static final String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private static final String user = "";
-	private static final String password = "";
-//	private static final String Database_Driver="com.mysql.jdbc.Driver";
-	private static final String Database_Driver="oracle.jdbc.driver.OracleDriver";
+	// private static final String url = "jdbc:mysql://localhost:3306/mysql";
+	private static final String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+	private static final String user = "nhrwa";
+	private static final String password = "nhrwa";
+	// private static final String Database_Driver="com.mysql.jdbc.Driver";
+	private static final String Database_Driver = "oracle.jdbc.driver.OracleDriver";
 
-	public static ResultSet readFromDB(String tableName, String query) {
+	public static ResultSet readFromDB(String tableName, String query, Connection con) {
 		Statement st = null;
 		ResultSet rs = null;
 		try {
-			Class.forName(Database_Driver).newInstance();
-			Connection con;
-			try {
-				con = DriverManager.getConnection(url, user, password);
-				st = con.createStatement();
-				String sql = ("SELECT * FROM " + tableName + " " + query + ";");
-				if (st != null) {
-					rs = st.executeQuery(sql);
-				}
-				con.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
+			st = con.createStatement();
+			String sql = "SELECT * FROM " + "USERTABLE" + "" + query;
+			if (st != null) {
+				rs = st.executeQuery(sql);
 			}
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e1) {
-			e1.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return rs;
+	}
+
+	public static Connection getConnection() throws SQLException {
+		try {
+			Class.forName(Database_Driver).newInstance();
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return DriverManager.getConnection(url, user, password);
 	}
 
 	public static boolean createToDB(String tableName, String fields, String values) {

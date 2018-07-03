@@ -5,9 +5,9 @@ import java.util.Calendar;
 import com.nhrwa.web_app.annotations.EntityField;
 
 public class BaseEntity {
-	@EntityField(columnName = "id")
+	@EntityField(columnName = "ID")
 	private String id;
-	@EntityField(columnName = "dateCreated")
+	@EntityField(columnName = "DATECREATED")
 	private Calendar dateCreated;
 	public String getId() {
 		return id;
