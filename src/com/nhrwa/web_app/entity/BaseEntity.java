@@ -21,12 +21,5 @@ public class BaseEntity {
 	public void setDateCreated(Calendar dateCreated) {
 		this.dateCreated = dateCreated;
 	}
-	public Calendar getDateUpdated() {
-		return dateUpdated;
-	}
-	public void setDateUpdated(Calendar dateUpdated) {
-		this.dateUpdated = dateUpdated;
-	}
-	private Calendar dateUpdated;
 
 }

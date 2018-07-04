@@ -44,7 +44,7 @@ public class BasicCRUDService<T extends BaseEntity> {
 
 	// Find methods
 
-	public Collection<T> findAll() {
+	public List<T> findAll() {
 		String query = "";
 		return find(query);
 	}
@@ -54,7 +54,7 @@ public class BasicCRUDService<T extends BaseEntity> {
 		return find(query).get(0);
 	}
 
-	private List<T> find(String query) {
+	List<T> find(String query) {
 		List<T> entities = new ArrayList<T>();
 		Connection con;
 		try {

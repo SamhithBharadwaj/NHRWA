@@ -5,9 +5,11 @@ import com.nhrwa.web_app.annotations.Entity;
 @Entity(tableName = "UserTable")
 public class User extends BaseEntity {
 	@EntityField(columnName = "USERTYPE")
-	private Integer type;
-	@EntityField(columnName = "USERNAME")
-	private String name;
+	private int type;
+	@EntityField(columnName = "USERID")
+	private String userId;
+	@EntityField(columnName = "USERKEY")
+	private String loginKey;
 	@EntityField(columnName = "PASSWORD")
 	private String password;
 
@@ -19,12 +21,12 @@ public class User extends BaseEntity {
 		this.type = type;
 	}
 
-	public String getName() {
-		return name;
+	public String getLoginKey() {
+		return loginKey;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setLoginKey(String loginKey) {
+		this.loginKey = loginKey;
 	}
 
 	public String getPassword() {
