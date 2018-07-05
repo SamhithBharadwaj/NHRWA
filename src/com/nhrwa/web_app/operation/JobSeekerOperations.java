@@ -46,7 +46,6 @@ public class JobSeekerOperations {
 				regService.createEntity(reg);
 			}
 		} catch (ImproperEntityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
